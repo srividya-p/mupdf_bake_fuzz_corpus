@@ -35,4 +35,4 @@ PDFs with only /Widget            : 36
 Maximum PDF size                  : 1,0M
 ```
 
-Other than the final zip file to be used as a corpus, this repo contains some not fully automated, quick and dirty scripts used to build the seed corpus. 
+In addition to the final corpus folder, this repo contains some not fully automated, quick and dirty scripts used to build the seed corpus. 
