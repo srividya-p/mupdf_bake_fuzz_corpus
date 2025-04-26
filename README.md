@@ -20,7 +20,7 @@ And the size of individual PDFs is capped at 1MB:
 find . -size -2M -type f -exec du -h {} + | sort -hr
 ```
 
-It is very easy to find PDFs with annotations, but the ones with widgets occur in lower numbers in the sources. The final corpus has an equal distribution of both:
+It is very easy to find PDFs with annotations, but the ones with widgets occur in lower numbers in the sources. The final corpus has a roughly equal distribution of both:
 
 ```bash
 $ scripts/sum.sh bake_fuzzer_seed_corpus
