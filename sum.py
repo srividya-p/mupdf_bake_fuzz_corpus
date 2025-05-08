@@ -1,5 +1,9 @@
 from pdfrw import PdfReader, PdfName
 import os
+import logging
+
+logging.getLogger("pdfrw").setLevel(logging.CRITICAL)
+
 
 def human_readable_size(num, suffix='B'):
     """Convert a byte count into a human-readable string."""
@@ -13,7 +17,11 @@ def count_objects_pdfrw(path):
     reader = PdfReader(path)
     page = reader.pages[0]  # assume one-page PDFs
     annots = getattr(page, "Annots", []) or []
-    widget_count = sum(1 for a in annots if a.Subtype == PdfName.Widget)
+    try:
+        widget_count = sum(1 for a in annots if a.Subtype == PdfName.Widget)
+    except Exception:
+        print(f"Error reading annotations in {path}")
+        widget_count = 0
     annot_count  = len(annots) - widget_count
     return annot_count, widget_count
 
