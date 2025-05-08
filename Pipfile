@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymupdf = "*"
+pandas = "*"
+pypdf2 = "*"
+pikepdf = "*"
+pdfrw = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
