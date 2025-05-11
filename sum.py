@@ -1,58 +1,155 @@
 from pdfrw import PdfReader, PdfName
+import fitz
 import os
 import logging
 
 logging.getLogger("pdfrw").setLevel(logging.CRITICAL)
 
 
-def human_readable_size(num, suffix='B'):
+def human_readable_size(num, suffix="B"):
     """Convert a byte count into a human-readable string."""
-    for unit in ['','K','M','G','T','P','E','Z']:
+    for unit in ["", "K", "M", "G", "T", "P", "E", "Z"]:
         if abs(num) < 1024.0:
             return f"{num:3.1f}{unit}{suffix}"
         num /= 1024.0
     return f"{num:.1f}Y{suffix}"
 
-def count_objects_pdfrw(path):
-    reader = PdfReader(path)
-    page = reader.pages[0]  # assume one-page PDFs
-    annots = getattr(page, "Annots", []) or []
+
+def count_objects_mupdf(path):
+    """Return (annotation_count, widget_count) across all pages of a PDF."""
     try:
-        widget_count = sum(1 for a in annots if a.Subtype == PdfName.Widget)
+        doc = fitz.open(path)
     except Exception:
-        print(f"Error reading annotations in {path}")
-        widget_count = 0
-    annot_count  = len(annots) - widget_count
+        return 0, 0
+    print(path)
+    annots = 0
+    widgets = 0
+    for pno in range(doc.page_count):
+        page = doc.load_page(pno)
+        annots += len(list(page.annots() or []))
+        widgets += len(list(page.widgets() or []))
+
+    doc.close()
+    return annots, widgets
+
+
+def count_objects_pdfrw(path):
+    """Return (annotation_count, widget_count) for the first page of a PDF."""
+    try:
+        reader = PdfReader(path)
+    except Exception:
+        return 0, 0
+    page = reader.pages[0]  # assume one‐page PDFs
+    annots = getattr(page, "Annots", []) or []
+    widget_count = 0
+    for a in annots:
+        try:
+            if a.Subtype == PdfName.Widget:
+                widget_count += 1
+        except Exception:
+            continue
+    annot_count = len(annots) - widget_count
     return annot_count, widget_count
 
-# Example batch run
-input_dir = "test"
+
+# ════════════════════════════════════════════════════════════
+# Main
+# ════════════════════════════════════════════════════════════
+input_dir = "bake_fuzzer_seed_corpus"
 sizes = []
 
-print("File statistics:")
+only_annots = []
+only_widgets = []
+both = []
+neither = []
+
+total_annots = 0
+total_widgets = 0
+
+bucket_counts = {
+    "<10KB": 0,
+    "10-50KB": 0,
+    "50-200KB": 0,
+    "200-500KB": 0,
+    ">500KB": 0,
+}
+
+print("File statistics:\n")
 for fname in sorted(os.listdir(input_dir)):
     if not fname.lower().endswith(".pdf"):
         continue
-    full_path = os.path.join(input_dir, fname)
+    path = os.path.join(input_dir, fname)
 
-    # 1) Get annotation/widget counts
-    a_count, w_count = count_objects_pdfrw(full_path)
-    # 2) Get file size
-    size_bytes = os.path.getsize(full_path)
+    a_count, w_count = count_objects_mupdf(path)
+    size_bytes = os.path.getsize(path)
     sizes.append(size_bytes)
     size_hr = human_readable_size(size_bytes)
 
-    print(f"{fname}: {a_count} annotations, {w_count} widgets, {size_hr}")
+    total_annots += a_count
+    total_widgets += w_count
 
-# Compute summary stats
+    # classify
+    if a_count > 0 and w_count == 0:
+        only_annots.append(fname)
+    elif w_count > 0 and a_count == 0:
+        only_widgets.append(fname)
+    elif w_count > 0 and a_count > 0:
+        both.append(fname)
+    else:
+        neither.append(fname)
+
+    # bucket
+    if size_bytes < 10 * 1024:
+        bucket_counts["<10KB"] += 1
+    elif size_bytes < 50 * 1024:
+        bucket_counts["10-50KB"] += 1
+    elif size_bytes < 200 * 1024:
+        bucket_counts["50-200KB"] += 1
+    elif size_bytes < 500 * 1024:
+        bucket_counts["200-500KB"] += 1
+    else:
+        bucket_counts[">500KB"] += 1
+
+    # print(f"{fname}: {a_count:3d} annotations, {w_count:3d} widgets, {size_hr}")
+
+# per‐file done
+print("\n═══════════════════════════════════════════")
+print("PDF classification summary:")
+print("───────────────────────────────────────────")
+print(f"PDF count                       : {len(sizes)}")
+print(f"Only annotations                : {len(only_annots)}")
+print(f"Only widgets                    : {len(only_widgets)}")
+print(f"Both annots+widgets             : {len(both)}")
+print(f"Neither annotations nor widgets : {len(neither)}")
+
+# size summary
 if sizes:
-    min_size = min(sizes)
-    max_size = max(sizes)
-    avg_size = sum(sizes) / len(sizes)
+    print("\n═══════════════════════════════════════════")
+    print("File size summary:")
+    print("───────────────────────────────────────────")
+    print(f"  Smallest file: {human_readable_size(min(sizes))}")
+    print(f"  Largest  file: {human_readable_size(max(sizes))}")
+    print(f"  Average size : {human_readable_size(sum(sizes) / len(sizes))}")
 
-    print("\nSummary of file sizes:")
-    print(f"  Smallest file: {human_readable_size(min_size)}")
-    print(f"  Largest file : {human_readable_size(max_size)}")
-    print(f"  Average size : {human_readable_size(avg_size)}")
+# bucket distribution
+print("\n═══════════════════════════════════════════")
+print("Size distribution:")
+print("───────────────────────────────────────────")
+for bucket, count in bucket_counts.items():
+    print(f"  {bucket:10s}: {count}")
+
+# total counts
+print("\n═══════════════════════════════════════════")
+print("Total objects across all PDFs:")
+print("───────────────────────────────────────────")
+print(f"  Total annotations = {total_annots}")
+print(f"  Total widgets     = {total_widgets}")
+
+if neither:
+    # Build full paths
+    paths = [os.path.join(input_dir, f) for f in neither]
+    # Print the rm command
+    print("\nTo delete all PDFs without any annotations or widgets, run:")
+    print("rm " + " ".join(f"'{p}'" for p in paths))
 else:
-    print("No PDF files found in the directory.")
+    print("\nNo “neither” PDFs to remove.")
