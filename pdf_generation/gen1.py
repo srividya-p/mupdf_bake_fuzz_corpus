@@ -76,16 +76,11 @@ annotation_templates = [
 def build_pdf():
     # Choose a random PDF version.
     pdf_version = random.choice(["1.4", "1.5", "1.7"])
-    # Flag to simulate an alternate cross-reference mechanism.
-    use_xref_stream = random.choice([True, False])
-    # With a chance, introduce a small deviation (e.g., a slight error in startxref).
-    deviation = random.random() < 0.3
-
     objects = []  # List of tuples: (object number, object content)
     
     # We'll assign fixed numbers to the Catalog and Pages objects.
     # Catalog (object 1) always points to Pages (object 2).
-    catalog_obj = (1, f"1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n")
+    catalog_obj = (1, "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n")
     objects.append(catalog_obj)
 
     pages_obj_num = 2  # reserved for the Pages object.
