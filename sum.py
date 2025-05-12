@@ -1,7 +1,10 @@
-from pdfrw import PdfReader, PdfName
-import fitz
 import os
+import sys
+import fitz
 import logging
+import statistics
+
+from pdfrw import PdfReader, PdfName
 
 logging.getLogger("pdfrw").setLevel(logging.CRITICAL)
 
@@ -54,7 +57,11 @@ def count_objects_pdfrw(path):
 # ════════════════════════════════════════════════════════════
 # Main
 # ════════════════════════════════════════════════════════════
-input_dir = "bake_fuzzer_seed_corpus"
+if len(sys.argv) == 1:
+    print("No input directory, exiting.")
+    exit(0)
+
+input_dir = sys.argv[1]
 sizes = []
 
 only_annots = []
@@ -131,11 +138,38 @@ if sizes:
     print(f"  Average size : {human_readable_size(sum(sizes) / len(sizes))}")
 
 # bucket distribution
-print("\n═══════════════════════════════════════════")
-print("Size distribution:")
-print("───────────────────────────────────────────")
-for bucket, count in bucket_counts.items():
-    print(f"  {bucket:10s}: {count}")
+if sizes:
+    # Compute quartiles (three cut-points dividing data into four equal groups)
+    q1, q2, q3 = statistics.quantiles(sizes, n=4)
+    # Build dynamic buckets
+    dynamic_buckets = [
+        (f"≤{human_readable_size(q1)}", lambda s: s <= q1),
+        (
+            f"{human_readable_size(q1)}–{human_readable_size(q2)}",
+            lambda s: q1 < s <= q2,
+        ),
+        (
+            f"{human_readable_size(q2)}–{human_readable_size(q3)}",
+            lambda s: q2 < s <= q3,
+        ),
+        (f">{human_readable_size(q3)}", lambda s: s > q3),
+    ]
+    # Initialize counts
+    bucket_counts = {label: 0 for label, _ in dynamic_buckets}
+
+    # Tally
+    for s in sizes:
+        for label, test in dynamic_buckets:
+            if test(s):
+                bucket_counts[label] += 1
+                break
+
+    # Print dynamic distribution
+    print("\n═══════════════════════════════════════════")
+    print("Size distribution (dynamic quartiles):")
+    print("───────────────────────────────────────────")
+    for label, _ in dynamic_buckets:
+        print(f"  {label:15s}: {bucket_counts[label]}")
 
 # total counts
 print("\n═══════════════════════════════════════════")
