@@ -1,0 +1,77 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Annots [5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R] >>
+endobj
+4 0 obj
+<< /Length 46 >>
+stream
+BT /F1 12 Tf 100 700 Td (File variation) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type/Annot /Subtype /Widget /Rect [310 650 350 670] /Contents (Widget Annotation) >>
+endobj
+6 0 obj
+<< /Type/Annot /Subtype /Line /Rect [160 750 200 770] /L [160 760 200 760] /Contents (Line Annotation) >>
+endobj
+7 0 obj
+<< /Type/Annot /Subtype /3D /Rect [210 600 250 620] /Contents (3D Annotation) >>
+endobj
+8 0 obj
+<< /Type/Annot /Subtype /Movie /Rect [260 650 300 670] /Movie << /F (movie.mpg) >> /Contents (Movie Annotation) >>
+endobj
+9 0 obj
+<< /Type/Annot /Subtype /Square /Rect [210 750 250 770] /BS << /W 1 >> /Contents (Square Annotation) >>
+endobj
+10 0 obj
+<< /Type/Annot /Subtype /Polygon /Rect [310 750 350 770] /Vertices [310 760 330 780 350 760] /Contents (Polygon Annotation) >>
+endobj
+11 0 obj
+<< /Type/Annot /Subtype /Caret /Rect [340 700 360 720] /Contents (Caret Annotation) >>
+endobj
+12 0 obj
+<< /Type/Annot /Subtype /Link /Rect [80 750 100 770] /A << /S /URI /URI (http://example.com) >> /Contents (Link Annotation) >>
+endobj
+13 0 obj
+<< /Type/Annot /Subtype /StrikeOut /Rect [230 700 280 720] /QuadPoints [230 720 280 720 230 700 280 700] /Contents (StrikeOut Annotation) >>
+endobj
+14 0 obj
+<< /Type/Annot /Subtype /FreeText /Rect [110 750 150 770] /Contents (FreeText Annotation) /DA (/Helvetica 10 Tf 0 g) >>
+endobj
+15 0 obj
+<< /Type/Annot /Subtype /Watermark /Rect [160 600 200 620] /Contents (Watermark Annotation) >>
+endobj
+16 0 obj
+<< /Type/Annot /Subtype /Screen /Rect [360 650 400 670] /Contents (Screen Annotation) >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000125 00000 n 
+0000000301 00000 n 
+0000000397 00000 n 
+0000000501 00000 n 
+0000000622 00000 n 
+0000000718 00000 n 
+0000000848 00000 n 
+0000000967 00000 n 
+0000001110 00000 n 
+0000001213 00000 n 
+0000001356 00000 n 
+0000001513 00000 n 
+0000001649 00000 n 
+0000001760 00000 n 
+trailer
+<< /Size 17 /Root 1 0 R >>
+startxref
+1865
+%%EOF

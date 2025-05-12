@@ -1,0 +1,89 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Annots [5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R] >>
+endobj
+4 0 obj
+<< /Length 46 >>
+stream
+BT /F1 12 Tf 100 700 Td (File variation) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type/Annot /Subtype /Line /Rect [160 750 200 770] /L [160 760 200 760] /Contents (Line Annotation) >>
+endobj
+6 0 obj
+<< /Type/Annot /Subtype /Link /Rect [80 750 100 770] /A << /S /URI /URI (http://example.com) >> /Contents (Link Annotation) >>
+endobj
+7 0 obj
+<< /Type/Annot /Subtype /Movie /Rect [260 650 300 670] /Movie << /F (movie.mpg) >> /Contents (Movie Annotation) >>
+endobj
+8 0 obj
+<< /Type/Annot /Subtype /Text /Rect [50 750 70 770] /Contents (Text Annotation) >>
+endobj
+9 0 obj
+<< /Type/Annot /Subtype /Square /Rect [210 750 250 770] /BS << /W 1 >> /Contents (Square Annotation) >>
+endobj
+10 0 obj
+<< /Type/Annot /Subtype /Watermark /Rect [160 600 200 620] /Contents (Watermark Annotation) >>
+endobj
+11 0 obj
+<< /Type/Annot /Subtype /Redact /Rect [260 600 300 620] /Contents (Redact Annotation) >>
+endobj
+12 0 obj
+<< /Type/Annot /Subtype /TrapNet /Rect [110 600 150 620] /Contents (TrapNet Annotation) >>
+endobj
+13 0 obj
+<< /Type/Annot /Subtype /Widget /Rect [310 650 350 670] /Contents (Widget Annotation) >>
+endobj
+14 0 obj
+<< /Type/Annot /Subtype /Stamp /Rect [290 700 330 720] /Contents (Stamp Annotation) >>
+endobj
+15 0 obj
+<< /Type/Annot /Subtype /Polygon /Rect [310 750 350 770] /Vertices [310 760 330 780 350 760] /Contents (Polygon Annotation) >>
+endobj
+16 0 obj
+<< /Type/Annot /Subtype /Popup /Rect [110 650 150 670] /Contents (Popup Annotation) >>
+endobj
+17 0 obj
+<< /Type/Annot /Subtype /3D /Rect [210 600 250 620] /Contents (3D Annotation) >>
+endobj
+18 0 obj
+<< /Type/Annot /Subtype /Underline /Rect [110 700 160 720] /QuadPoints [110 720 160 720 110 700 160 700] /Contents (Underline Annotation) >>
+endobj
+19 0 obj
+<< /Type/Annot /Subtype /Squiggly /Rect [170 700 220 720] /QuadPoints [170 720 220 720 170 700 220 700] /Contents (Squiggly Annotation) >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000125 00000 n 
+0000000322 00000 n 
+0000000418 00000 n 
+0000000539 00000 n 
+0000000681 00000 n 
+0000000811 00000 n 
+0000000909 00000 n 
+0000001028 00000 n 
+0000001139 00000 n 
+0000001244 00000 n 
+0000001351 00000 n 
+0000001456 00000 n 
+0000001559 00000 n 
+0000001702 00000 n 
+0000001805 00000 n 
+0000001902 00000 n 
+0000002059 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+2214
+%%EOF

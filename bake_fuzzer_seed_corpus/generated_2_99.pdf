@@ -1,0 +1,85 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Annots [5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R] >>
+endobj
+4 0 obj
+<< /Length 46 >>
+stream
+BT /F1 12 Tf 100 700 Td (File variation) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type/Annot /Subtype /Highlight /Rect [50 700 100 720] /QuadPoints [50 720 100 720 50 700 100 700] /Contents (Highlight Annotation) >>
+endobj
+6 0 obj
+<< /Type/Annot /Subtype /Square /Rect [210 750 250 770] /BS << /W 1 >> /Contents (Square Annotation) >>
+endobj
+7 0 obj
+<< /Type/Annot /Subtype /Text /Rect [50 750 70 770] /Contents (Text Annotation) >>
+endobj
+8 0 obj
+<< /Type/Annot /Subtype /Watermark /Rect [160 600 200 620] /Contents (Watermark Annotation) >>
+endobj
+9 0 obj
+<< /Type/Annot /Subtype /StrikeOut /Rect [230 700 280 720] /QuadPoints [230 720 280 720 230 700 280 700] /Contents (StrikeOut Annotation) >>
+endobj
+10 0 obj
+<< /Type/Annot /Subtype /Widget /Rect [310 650 350 670] /Contents (Widget Annotation) >>
+endobj
+11 0 obj
+<< /Type/Annot /Subtype /Line /Rect [160 750 200 770] /L [160 760 200 760] /Contents (Line Annotation) >>
+endobj
+12 0 obj
+<< /Type/Annot /Subtype /Sound /Rect [210 650 250 670] /Sound << /R 8000 /E (raw) /Channels 1 >> /Contents (Sound Annotation) >>
+endobj
+13 0 obj
+<< /Type/Annot /Subtype /PolyLine /Rect [360 750 400 770] /Vertices [360 760 380 780 400 760] /Contents (PolyLine Annotation) >>
+endobj
+14 0 obj
+<< /Type/Annot /Subtype /Popup /Rect [110 650 150 670] /Contents (Popup Annotation) >>
+endobj
+15 0 obj
+<< /Type/Annot /Subtype /Squiggly /Rect [170 700 220 720] /QuadPoints [170 720 220 720 170 700 220 700] /Contents (Squiggly Annotation) >>
+endobj
+16 0 obj
+<< /Type/Annot /Subtype /Ink /Rect [50 650 100 670] /InkList [[50 660 75 665 100 660]] /Contents (Ink Annotation) >>
+endobj
+17 0 obj
+<< /Type/Annot /Subtype /PrinterMark /Rect [50 600 100 620] /Contents (PrinterMark Annotation) >>
+endobj
+18 0 obj
+<< /Type/Annot /Subtype /Link /Rect [80 750 100 770] /A << /S /URI /URI (http://example.com) >> /Contents (Link Annotation) >>
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000125 00000 n 
+0000000315 00000 n 
+0000000411 00000 n 
+0000000564 00000 n 
+0000000683 00000 n 
+0000000781 00000 n 
+0000000891 00000 n 
+0000001047 00000 n 
+0000001152 00000 n 
+0000001274 00000 n 
+0000001419 00000 n 
+0000001564 00000 n 
+0000001667 00000 n 
+0000001822 00000 n 
+0000001955 00000 n 
+0000002069 00000 n 
+trailer
+<< /Size 19 /Root 1 0 R >>
+startxref
+2212
+%%EOF

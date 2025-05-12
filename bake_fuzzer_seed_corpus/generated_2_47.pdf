@@ -1,0 +1,61 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Annots [5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R] >>
+endobj
+4 0 obj
+<< /Length 46 >>
+stream
+BT /F1 12 Tf 100 700 Td (File variation) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type/Annot /Subtype /Movie /Rect [260 650 300 670] /Movie << /F (movie.mpg) >> /Contents (Movie Annotation) >>
+endobj
+6 0 obj
+<< /Type/Annot /Subtype /PolyLine /Rect [360 750 400 770] /Vertices [360 760 380 780 400 760] /Contents (PolyLine Annotation) >>
+endobj
+7 0 obj
+<< /Type/Annot /Subtype /Squiggly /Rect [170 700 220 720] /QuadPoints [170 720 220 720 170 700 220 700] /Contents (Squiggly Annotation) >>
+endobj
+8 0 obj
+<< /Type/Annot /Subtype /Square /Rect [210 750 250 770] /BS << /W 1 >> /Contents (Square Annotation) >>
+endobj
+9 0 obj
+<< /Type/Annot /Subtype /3D /Rect [210 600 250 620] /Contents (3D Annotation) >>
+endobj
+10 0 obj
+<< /Type/Annot /Subtype /FreeText /Rect [110 750 150 770] /Contents (FreeText Annotation) /DA (/Helvetica 10 Tf 0 g) >>
+endobj
+11 0 obj
+<< /Type/Annot /Subtype /Underline /Rect [110 700 160 720] /QuadPoints [110 720 160 720 110 700 160 700] /Contents (Underline Annotation) >>
+endobj
+12 0 obj
+<< /Type/Annot /Subtype /Link /Rect [80 750 100 770] /A << /S /URI /URI (http://example.com) >> /Contents (Link Annotation) >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000125 00000 n 
+0000000273 00000 n 
+0000000369 00000 n 
+0000000499 00000 n 
+0000000643 00000 n 
+0000000797 00000 n 
+0000000916 00000 n 
+0000001012 00000 n 
+0000001148 00000 n 
+0000001305 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+1448
+%%EOF
