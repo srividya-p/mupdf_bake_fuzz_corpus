@@ -21,7 +21,6 @@ def count_objects_mupdf(path):
         doc = fitz.open(path)
     except Exception:
         return 0, 0
-    print(path)
     annots = 0
     widgets = 0
     for pno in range(doc.page_count):
