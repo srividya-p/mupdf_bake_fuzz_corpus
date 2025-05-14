@@ -86,35 +86,22 @@ The final corpus has the following distribution:
 
 ```bash
 $ python3 sum.py bake_fuzzer_seed_corpus
-═══════════════════════════════════════════
-PDF classification summary:
-───────────────────────────────────────────
-PDF count                       : 200
-Only annotations                : 55
-Only widgets                    : 6
+═══════════════════════════════════════════  ═══════════════════════════════════════════
+ PDF classification summary:                  File size summary:
+───────────────────────────────────────────  ───────────────────────────────────────────
+PDF count                       : 200        Smallest file                : 715.0B      
+Only annotations                : 55         Largest  file                : 6.1KB
+Only widgets                    : 6          Average size                 : 2.9KB
 Both annots+widgets             : 138
 Neither annotations nor widgets : 1
-
-═══════════════════════════════════════════
-File size summary:
-───────────────────────────────────────────
-  Smallest file: 715.0B
-  Largest  file: 6.1KB
-  Average size : 2.9KB
-
-═══════════════════════════════════════════
-Size distribution (dynamic quartiles):
-───────────────────────────────────────────
-  ≤2.0KB         : 50
-  2.0KB–3.0KB    : 50
-  3.0KB–3.9KB    : 50
-  >3.9KB         : 50
-
-═══════════════════════════════════════════
-Total objects across all PDFs:
-───────────────────────────────────────────
-  Total annotations = 1946
-  Total widgets     = 260
+═══════════════════════════════════════════  ═══════════════════════════════════════════
+ Size distribution (dynamic quartiles):       Total objects across all PDFs:
+───────────────────────────────────────────  ───────────────────────────────────────────
+  ≤2.0KB                        : 50         Total annotations            : 1946       
+  2.0KB–3.0KB                   : 50         Total widgets                : 260      
+  3.0KB–3.9KB                   : 50
+  >3.9KB                        : 50
+═══════════════════════════════════════════  ═══════════════════════════════════════════
 ```
 
 For a 10 minute run, this corpus also provides a coverage of 67.4% (LOC 783/1161) which is still reasonably high.
