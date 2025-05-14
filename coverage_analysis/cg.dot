@@ -1,0 +1,168 @@
+graph mupdf_call_graph_neato {
+  layout = dot;
+  rankdir = LR;          // left→right flow
+  splines = true;        // curved edges
+  nodesep  = 0.5;        // tighten node spacing
+  ranksep  = 0.75;
+  dpi      = 300;
+  size     = "8,8!";
+
+  node [
+    shape    = box
+    fontname = "Helvetica"
+    fontsize = 30
+    style    = filled
+  ];
+
+  "pdf_bake_document" [
+    shape=ellipse,
+    fillcolor=indianred,
+    fontsize=35,
+    margin="0.2,0.2",
+    fontname="Helvetica-Bold",
+    fontcolor=white,
+    orientation=180
+  ];
+
+  /* Level-1 nodes */
+  "fz_drop_page (3)"                      [fillcolor=lightpink];
+  "pdf_abandon_operation (4)"             [fillcolor=lightpink];
+  "pdf_annot_request_synthesis (2)"       [fillcolor=lightpink];
+  "pdf_bake_page (17)"                    [fillcolor=lightpink];
+  "pdf_begin_operation (1)"               [fillcolor=lightpink];
+  "pdf_count_pages (3)"                   [fillcolor=lightpink];
+  "pdf_dict_del (2)"                      [fillcolor=lightpink];
+  "pdf_dict_get (3)"                      [fillcolor=lightpink];
+  "pdf_end_operation (5)"                 [fillcolor=lightpink];
+  "pdf_first_annot (0)"                   [fillcolor=lightpink];
+  "pdf_first_widget (0)"                  [fillcolor=lightpink];
+  "pdf_load_page (1)"                     [fillcolor=lightpink];
+  "pdf_next_annot (0)"                    [fillcolor=lightpink];
+  "pdf_next_widget (0)"                   [fillcolor=lightpink];
+  "pdf_trailer (0)"                       [fillcolor=lightpink];
+  "pdf_update_page (5)"                   [fillcolor=lightpink];
+
+  /* Level-2 nodes */
+  "fz_drop_document"                      [fillcolor=grey80];
+  "fz_drop_imp"                           [fillcolor=grey80];
+  "fz_free"                               [fillcolor=grey80];
+  "discard_journal_entries"               [fillcolor=grey80];
+  "fz_stddbg"                             [fillcolor=grey80];
+  "fz_write_printf"                       [fillcolor=grey80];
+  "swap_fragments"                        [fillcolor=grey80];
+  "pdf_annot_ap"                          [fillcolor=grey80];
+  "pdf_annot_request_resynthesis"         [fillcolor=grey80];
+  "fz_append_string"                      [fillcolor=grey80];
+  "fz_drop_buffer"                        [fillcolor=grey80];
+  "fz_new_buffer"                         [fillcolor=grey80];
+  "pdf_add_stream"                        [fillcolor=grey80];
+  "pdf_array_delete"                      [fillcolor=grey80];
+  "pdf_array_get"                         [fillcolor=grey80];
+  "pdf_array_insert"                      [fillcolor=grey80];
+  "pdf_array_len"                         [fillcolor=grey80];
+  "pdf_array_push"                        [fillcolor=grey80];
+  "pdf_array_push_drop"                   [fillcolor=grey80];
+  "pdf_bake_annot"                        [fillcolor=grey80];
+  "pdf_count_q_balance"                   [fillcolor=grey80];
+  "pdf_dict_get"                          [fillcolor=grey80];
+  "pdf_dict_put"                          [fillcolor=grey80];
+  "pdf_dict_put_dict"                     [fillcolor=grey80];
+  "pdf_drop_obj"                          [fillcolor=grey80];
+  "pdf_is_array"                          [fillcolor=grey80];
+  "pdf_new_array"                         [fillcolor=grey80];
+  "do_begin_operation"                    [fillcolor=grey80];
+  "pdf_dict_getp"                         [fillcolor=grey80];
+  "pdf_to_int"                            [fillcolor=grey80];
+  "pdf_trailer"                           [fillcolor=grey80];
+  "pdf_dict_dels"                         [fillcolor=grey80];
+  "pdf_objkindstr"                        [fillcolor=grey80];
+  "pdf_dict_find"                         [fillcolor=grey80];
+  "pdf_dict_finds"                        [fillcolor=grey80];
+  "pdf_to_name"                           [fillcolor=grey80];
+  "resolve_undo"                          [fillcolor=grey80];
+  "fz_load_page"                          [fillcolor=grey80];
+  "pdf_abandon_operation"                 [fillcolor=grey80];
+  "pdf_begin_implicit_operation"          [fillcolor=grey80];
+  "pdf_calculate_form"                    [fillcolor=grey80];
+  "pdf_end_operation"                     [fillcolor=grey80];
+  "pdf_update_annot"                      [fillcolor=grey80];
+
+  /* ─── Edges ─── */
+
+  /* Root → Level-1 */
+  "pdf_bake_document" -- "fz_drop_page (3)";
+  "pdf_bake_document" -- "pdf_abandon_operation (4)";
+  "pdf_bake_document" -- "pdf_annot_request_synthesis (2)";
+  "pdf_bake_document" -- "pdf_bake_page (17)";
+  "pdf_bake_document" -- "pdf_begin_operation (1)";
+  "pdf_bake_document" -- "pdf_count_pages (3)";
+  "pdf_bake_document" -- "pdf_dict_del (2)";
+  "pdf_bake_document" -- "pdf_dict_get (3)";
+  "pdf_bake_document" -- "pdf_end_operation (5)";
+  "pdf_bake_document" -- "pdf_first_annot (0)";
+  "pdf_bake_document" -- "pdf_first_widget (0)";
+  "pdf_bake_document" -- "pdf_load_page (1)";
+  "pdf_bake_document" -- "pdf_next_annot (0)";
+  "pdf_bake_document" -- "pdf_next_widget (0)";
+  "pdf_bake_document" -- "pdf_trailer (0)";
+  "pdf_bake_document" -- "pdf_update_page (5)";
+
+  /* Level-1 → Level-2 */
+  "fz_drop_page (3)" -- "fz_drop_document";
+  "fz_drop_page (3)" -- "fz_drop_imp";
+  "fz_drop_page (3)" -- "fz_free";
+
+  "pdf_abandon_operation (4)" -- "discard_journal_entries";
+  "pdf_abandon_operation (4)" -- "fz_stddbg";
+  "pdf_abandon_operation (4)" -- "fz_write_printf";
+  "pdf_abandon_operation (4)" -- "swap_fragments";
+
+  "pdf_annot_request_synthesis (2)" -- "pdf_annot_ap";
+  "pdf_annot_request_synthesis (2)" -- "pdf_annot_request_resynthesis";
+
+  "pdf_bake_page (17)" -- "fz_append_string";
+  "pdf_bake_page (17)" -- "fz_drop_buffer";
+  "pdf_bake_page (17)" -- "fz_new_buffer";
+  "pdf_bake_page (17)" -- "pdf_add_stream";
+  "pdf_bake_page (17)" -- "pdf_array_delete";
+  "pdf_bake_page (17)" -- "pdf_array_get";
+  "pdf_bake_page (17)" -- "pdf_array_insert";
+  "pdf_bake_page (17)" -- "pdf_array_len";
+  "pdf_bake_page (17)" -- "pdf_array_push";
+  "pdf_bake_page (17)" -- "pdf_array_push_drop";
+  "pdf_bake_page (17)" -- "pdf_bake_annot";
+  "pdf_bake_page (17)" -- "pdf_count_q_balance";
+  "pdf_bake_page (17)" -- "pdf_dict_get";
+  "pdf_bake_page (17)" -- "pdf_dict_put";
+  "pdf_bake_page (17)" -- "pdf_dict_put_dict";
+  "pdf_bake_page (17)" -- "pdf_drop_obj";
+  "pdf_bake_page (17)" -- "pdf_is_array";
+  "pdf_bake_page (17)" -- "pdf_new_array";
+
+  "pdf_begin_operation (1)" -- "do_begin_operation";
+
+  "pdf_count_pages (3)" -- "pdf_dict_getp";
+  "pdf_count_pages (3)" -- "pdf_to_int";
+  "pdf_count_pages (3)" -- "pdf_trailer";
+
+  "pdf_dict_del (2)" -- "pdf_dict_dels";
+  "pdf_dict_del (2)" -- "pdf_objkindstr";
+
+  "pdf_dict_get (3)" -- "pdf_dict_find";
+  "pdf_dict_get (3)" -- "pdf_dict_finds";
+  "pdf_dict_get (3)" -- "pdf_to_name";
+
+  "pdf_end_operation (5)" -- "discard_journal_entries";
+  "pdf_end_operation (5)" -- "fz_free";
+  "pdf_end_operation (5)" -- "fz_stddbg";
+  "pdf_end_operation (5)" -- "fz_write_printf";
+  "pdf_end_operation (5)" -- "resolve_undo";
+
+  "pdf_load_page (1)" -- "fz_load_page";
+
+  "pdf_update_page (5)" -- "pdf_abandon_operation";
+  "pdf_update_page (5)" -- "pdf_begin_implicit_operation";
+  "pdf_update_page (5)" -- "pdf_calculate_form";
+  "pdf_update_page (5)" -- "pdf_end_operation";
+  "pdf_update_page (5)" -- "pdf_update_annot";
+}
